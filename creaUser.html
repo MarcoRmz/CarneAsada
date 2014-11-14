@@ -37,13 +37,13 @@
     <form id="formLogin" action="form_action.asp">
       <p align="center"><input type="text" name="username" placeholder="Username" /> </p>
       <p align="center"><input type="password" name="password" placeholder="Password"/> </p><br/>
-      <p align="center"><input type="button" onclick="login()" value="Submit" ></p>
+      <p align="center"><input type="button" onclick="login()" value="Login" ></p>
     </form>
   </div>
 
 
     <div class="wrapper">
-      <input type="button" onclick="register()" value="Submit">
+      <input type="button" onclick="register()" value="Register">
     </div>
 
     <div id hidden="123">
@@ -77,7 +77,6 @@
   Parse.User.logIn(x.elements[0].value, x.elements[1].value, {
     success: function(user) {
     // Do stuff after successful login.
-    alert("yes login");
     move();
 
     },
