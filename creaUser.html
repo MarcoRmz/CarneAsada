@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="css/styles.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.1.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
 </head>
 
 <body>
@@ -31,8 +33,17 @@
       </font>
     </form>
 
+      <div id="loginChafo">
+    <form id="formLogin" action="form_action.asp">
+      <p align="center"><input type="text" name="username" placeholder="Username" /> </p>
+      <p align="center"><input type="password" name="password" placeholder="Password"/> </p><br/>
+      <p align="center"><input type="button" onclick="login()" value="Submit" ></p>
+    </form>
+  </div>
+
+
     <div class="wrapper">
-      <input type="button" onclick="myFunction()" value="Submit">
+      <input type="button" onclick="register()" value="Submit">
     </div>
 
     <div id hidden="123">
@@ -41,7 +52,7 @@
 
     <script>
     Parse.initialize("Ggx4FvZ6WZkF4IDVpCOcIGIFJ9r6w54xnIQHn2WR",  "Q597e1ww6dn8RoazDcPwDB9K3Sot1bfoS70nkPnx");
-    function myFunction(){
+    function register(){
       var x = document.getElementById("frm1");
       var user = new Parse.User();
       user.set("fname", x.elements[0].value);
@@ -60,6 +71,21 @@
         }
       });
     }
+
+    function login() {
+  var x = document.getElementById("formLogin");
+  Parse.User.logIn(x.elements[0].value, x.elements[1].value, {
+    success: function(user) {
+    // Do stuff after successful login.
+    move();
+
+    },
+    error: function(user, error) {
+    // The login failed. Check error to see why.
+    alert("Error: " + error.code + " " + error.message);
+
+  }
+});
     </script>
       
 </body>
