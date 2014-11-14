@@ -1,0 +1,67 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <script language="JavaScript">
+  var time = null
+  function move() {
+  window.location = 'index.html';
+  }
+
+  </script>
+  <title>Register</title>
+  <meta name="description" content="Register">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.1.min.js"></script>
+</head>
+
+<body>
+
+    <H1><font color="WHITE"><p align="center">Excited to have you join us. When finished click submit.</p></font></H1>
+    <form id="frm1" action="form_action.asp">
+      <font color="WHITE">
+      <p align="center">First name:<br/> <input type="text" name="fname" placeholder="e.g. John"><br></p>
+      <p align="center">Last name:<br/> <input type="text" name="lname" placeholder="e.g. Smith"><br></p>
+      <p align="center">Username:<br/> <input type="text" name="uname" placeholder="e.g. TutorMe23"><br></p>
+      <p align="center">Password: <br/> <input type="text" name="pass" placeholder="e.g. MyPass*23"><br></p>
+      <p align="center">Email: <br/> <input type="text" name="mail" placeholder="e.g. TutorMe@tutorme.com"><br></p>
+      </font>
+    </form>
+
+    <div class="wrapper">
+      <input type="button" onclick="myFunction()" value="Submit">
+    </div>
+
+    <div id hidden="123">
+    <p id ="demo"></p>
+    </div>   
+
+    <script>
+    Parse.initialize("Ggx4FvZ6WZkF4IDVpCOcIGIFJ9r6w54xnIQHn2WR",  "Q597e1ww6dn8RoazDcPwDB9K3Sot1bfoS70nkPnx");
+    function myFunction(){
+      var x = document.getElementById("frm1");
+      var user = new Parse.User();
+      user.set("fname", x.elements[0].value);
+      user.set("lname", x.elements[1].value);
+      user.set("username", x.elements[2].value);
+      user.set("password", x.elements[3].value);
+      user.set("email", x.elements[4].value);
+      user.signUp(null, {
+        success: function(user) {
+          // Hooray! Let them use the app now.
+          move();
+        },
+        error: function(user, error) {
+          // Show the error message somewhere and let the user try again.
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
+    }
+    </script>
+      
+</body>
+
+</html>
