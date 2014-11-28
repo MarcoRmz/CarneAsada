@@ -150,7 +150,7 @@
     }
 
     function login() {
-  var x = document.getElementById("frm1");
+  var x = document.getElementById("frm2");
   Parse.User.logIn(x.elements[0].value, x.elements[1].value, {
     success: function(user) {
     // Do stuff after successful login.
@@ -171,7 +171,7 @@
 		<p>Bienvenido de vuelta</p>
 		<div class="registration_form">
 		 <!-- Form -->
-			<form id="frm1" action="form_action.asp">
+			<form id="frm2" action="form_action.asp">
 				      <p align="center"><input type="text" name="username" placeholder="Username" /> </p>
 				      <p align="center"><input type="password" name="password" placeholder="Password"/> </p>
 				      <p align="center"><input type="button" onclick="login()" value="Login" ></p>
