@@ -1601,7 +1601,7 @@ span.color7{
 .btn_form{
 	margin: 4% 0 2%;
 }
-.btn_form form input[type="submit"]{
+.btn_form form input[type="button"]{
 	cursor:pointer;
 	display: inline-block;
 	font-family: 'Maven Pro', sans-serif;
@@ -1622,7 +1622,7 @@ span.color7{
 	-moz-border-radius: 2px;
 	-o-border-radius: 2px;
 }
-.btn_form form input[type="submit"]:hover{
+.btn_form form input[type="button"]:hover{
 	background: #57C5A0;
 	border: 1px solid #57c5a0;
 }
