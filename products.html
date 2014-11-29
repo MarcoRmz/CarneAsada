@@ -16,6 +16,7 @@
 				$('nav#menu-left').mmenu();
 			});
 		</script>
+	<script src="js/simpleCart.js" type="text/javascript"></script>
 <!-- start top_js_button -->
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript" src="js/move-top.js"></script>
@@ -25,82 +26,6 @@
 				event.preventDefault();
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
 			});
-		});
-	</script>
-	<script src="simpleCart.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		simpleCart({
-			// array representing the format and columns of the cart,
-			// see the cart columns documentation
-			cartColumns: [
-				{ attr: "name", label: "Name"},
-				{ view: "currency", attr: "price", label: "Price"},
-				{ view: "decrement", label: false},
-				{ attr: "quantity", label: "Qty"},
-				{ view: "increment", label: false},
-				{ view: "currency", attr: "total", label: "SubTotal" },
-				{ view: "remove", text: "Remove", label: false}
-			],
-
-			// "div" or "table" - builds the cart as a 
-			// table or collection of divs
-			cartStyle: "table", 
-
-			// how simpleCart should checkout, see the 
-			// checkout reference for more info 
-			checkout: { 
-				type: "PayPal" , 
-				email: "you@yours.com" 
-			},
-
-			// set the currency, see the currency 
-			// reference for more info
-			currency: "MXN",
-
-			// collection of arbitrary data you may want to store 
-			// with the cart, such as customer info
-			data: {},
-
-			// set the cart langauge 
-			// (may be used for checkout)
-			language: "spanish-es",
-
-			// array of item fields that will not be 
-			// sent to checkout
-			excludeFromCheckout: [],
-
-			// custom function to add shipping cost
-			shippingCustom: null,
-
-			// flat rate shipping option
-			shippingFlatRate: 0,
-
-			// added shipping based on this value 
-			// multiplied by the cart quantity
-			shippingQuantityRate: 0,
-
-			// added shipping based on this value 
-			// multiplied by the cart subtotal
-			shippingTotalRate: 0,
-
-			// tax rate applied to cart subtotal
-			taxRate: 0,
-
-			// true if tax should be applied to shipping
-			taxShipping: false,
-
-			// event callbacks 
-			beforeAdd			: null,
-			afterAdd			: null,
-			load				: null,
-			beforeSave		: null,
-			afterSave			: null,
-			update			: null,
-			ready			: null,
-			checkoutSuccess	: null,
-			checkoutFail		: null,
-			beforeCheckout		: null,
-		    beforeRemove           : null
 		});
 	</script>
 </head>
@@ -154,7 +79,7 @@
 		</nav>
 	<div class="header_right">
 		<ul>
-			<li><a href="#"><i  class="cart"></i><span>0</span></a></li>
+			<li><a href="javascript:;" class="simpleCart_checkout"><i  class="cart"></i><span class="simpleCart_quantity"></span></a></li>
 		</ul>
 	</div>
 	<div class="clear"></div>
