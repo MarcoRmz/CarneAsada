@@ -97,6 +97,10 @@ body {
     vertical-align: center;
 }
 
+a {
+	color: #57C5A0;
+}
+
 /********** Login & registration *************/
 .log_reg{
 	border-right: 1px solid rgb(60, 60, 60);
@@ -551,16 +555,16 @@ h4.style{
 	text-shadow: 0 1px 0 #ffffff;
 	/*text-transform: capitalize;*/
 }
-.price{
+.item_price{
 	background: #57C5A0;
 	color: #ffffff;
 	font-size: 0.8725em;
 	padding: 25px 12px;
 	position: absolute;
 	bottom: 0px;
-	left: 10px;
+	right: 0px;
 }
-.price1{
+.item_price1{
 	font-size: 0.8725em;
 	color: #ffffff;
 	padding: 25px 15px;
@@ -569,10 +573,10 @@ h4.style{
 	right: 10px;
 	text-transform:uppercase;
 }
-.price1.bg{
+.item_price1.bg{
 	background: #242424;
 }
-.price1.bg1{
+.item_price1.bg1{
 	background: #F27E4B;
 	width: 60px;
 }
