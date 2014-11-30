@@ -1697,6 +1697,11 @@
 					}
 					, items: function (selector) {
 						simpleCart.writeCart(selector);
+						simpleCart.trigger("afterCreate");
+						simpleCart.bind("afterCreate", function(){
+						   $cart_table = $(".simpleCart_items table")
+						   $cart_table.addClass("table")
+						});
 					}
 					, tax: function () {
 						return simpleCart.toCurrency(simpleCart.tax());
