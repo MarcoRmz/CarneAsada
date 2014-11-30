@@ -1690,6 +1690,11 @@
 			simpleCart.ready(function () {
 				simpleCart.bindOutlets({
 					total: function () {
+						simpleCart.trigger("afterCreate");
+						simpleCart.bind("afterCreate", function(){
+						   $cart_table = $(".simpleCart_items table")
+						   $cart_table.addClass("table")
+						});
 						return simpleCart.toCurrency(simpleCart.total());
 					}
 					, quantity: function () {

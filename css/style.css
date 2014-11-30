@@ -46,7 +46,6 @@ body {
 }
 
 .table {
-    /* Remove spacing between table cells (from Normalize.css) */
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
@@ -81,12 +80,12 @@ body {
     margin: 0;
     overflow: visible; /*to make ths where the title is really long work*/
     padding: 0.5em 1em; /* cell padding */
-}
+}/*
 .table td:first-child,
 .table th:first-child {
     border-left-width: 1;
 }
-
+*/
 .table a {
 	color: #57C5A0;
 }
@@ -94,8 +93,8 @@ body {
 .table thead {
     background: #242424;
     color: #ffffff;
-    text-align: left;
-    vertical-align: bottom;
+    text-align: center;
+    vertical-align: center;
 }
 
 /********** Login & registration *************/
