@@ -501,7 +501,7 @@
 					} else if (isObject(message) && isString(message.message)) {
 						msg = message.message;
 					}
-					try { console.log("simpleCart(js) Error: " + msg); } catch (e) {}
+					try { console.log("Error: " + msg); } catch (e) {}
 					simpleCart.trigger('error', [message]);
 				}
 			});
