@@ -449,7 +449,8 @@ h4.style{
 .image1_of_3{
 	float: left;
 	width: 30.99999%;
-	margin-left: 3.3333%;
+	margin-left: 10.3333%;
+	margin-right: 3.3333%;
 	text-align:center;
 }
 .image1_of_3:first-child{
@@ -474,6 +475,38 @@ h4.style{
 	transition: all 0.3s ease-in-out;
 }
 .image1_of_3 span.tag:hover{
+	background: rgba(0, 0, 0, 0.61);
+}
+
+.image2_of_3{
+	float: right;
+	width: 30.99999%;
+	margin-left: 3.3333%;
+	margin-right: 10.3333%;
+	text-align:center;
+}
+.image2_of_3:first-child{
+	margin-left: 0;
+}
+.image2_of_3 img{
+	width:100%;
+}
+.image2_of_3 span{
+	position: relative;
+	top: -120px;
+}
+.image2_of_3 span.tag{
+	padding: 15px 30px;
+	background: rgba(36, 36, 36, 0.85);
+	color: #ffffff;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.image2_of_3 span.tag:hover{
 	background: rgba(0, 0, 0, 0.61);
 }
 
