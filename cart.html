@@ -6,235 +6,212 @@ V: 1.3
 -->
 <!DOCTYPE HTML>
 <html>
-<head>
-<title>Carne Asada | Carrito</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,900,700,500' rel='stylesheet' type='text/css'>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!--- start-menu-script---->
-<script src="js/jquery.min.js" type="text/javascript"></script>
-<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-<script type="text/javascript" src="js/jquery.mmenu.js"></script>
+	<head>
+	<title>Carne Asada | Carrito</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,900,700,500' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!--- start-menu-script---->
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+	<script type="text/javascript" src="js/jquery.mmenu.js"></script>
+			<script type="text/javascript">
+				//	The menu on the left
+				$(function() {
+					$('nav#menu-left').mmenu();
+				});
+			</script>
+		<script src="js/simpleCart.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			//	The menu on the left
-			$(function() {
-				$('nav#menu-left').mmenu();
+			simpleCart({
+				// array representing the format and columns of the cart,
+				// see the cart columns documentation
+				cartColumns: [
+					{ attr: "name", label: "Nombre"},
+					{ attr: "size", label: "Detalles"},
+					{ view: "currency", attr: "price", label: "Precio"},
+					{ view: "decrement", label: true , text: "-"},
+					{ attr: "quantity", label: "Cant."},
+					{ view: "increment" , label: true , text: "+"},
+					{ view: "currency", attr: "total", label: "SubTotal"},
+					{ view: "remove", text: "Quitar", label: true}
+				],
+
+				// "div" or "table" - builds the cart as a 
+				// table or collection of divs
+				cartStyle: "table", 
+
+				// how simpleCart should checkout, see the 
+				// checkout reference for more info 
+				checkout: { 
+					type: "PayPal" , 
+					email: "ventas@binariosasados.com" 
+				},
+
+				// set the currency, see the currency 
+				// reference for more info
+				currency: "MXN",
+
+				// collection of arbitrary data you may want to store 
+				// with the cart, such as customer info
+				data: {},
+
+				// set the cart langauge 
+				// (may be used for checkout)
+				language: "spanish-es",
+
+				// true if tax should be applied to shipping
+				taxShipping: false,
+
+				// event callbacks 
+				beforeAdd			: null,
+				afterAdd			: null,
+				load				: null,
+				beforeSave		: null,
+				afterSave			: null,
+				update			: null,
+				ready			: null,
+				checkoutSuccess	: null,
+				checkoutFail		: null,
+				beforeCheckout		: null,
+			    beforeRemove           : null
 			});
 		</script>
-	<script src="js/simpleCart.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		simpleCart({
-			// array representing the format and columns of the cart,
-			// see the cart columns documentation
-			cartColumns: [
-				{ attr: "name", label: "Nombre"},
-				{ attr: "size", label: "Detalles"},
-				{ view: "currency", attr: "price", label: "Precio"},
-				{ view: "decrement", label: true , text: "-"},
-				{ attr: "quantity", label: "Cant."},
-				{ view: "increment" , label: true , text: "+"},
-				{ view: "currency", attr: "total", label: "SubTotal"},
-				{ view: "remove", text: "Quitar", label: true}
-			],
-
-			// "div" or "table" - builds the cart as a 
-			// table or collection of divs
-			cartStyle: "table", 
-
-			// how simpleCart should checkout, see the 
-			// checkout reference for more info 
-			checkout: { 
-				type: "PayPal" , 
-				email: "ventas@binariosasados.com" 
-			},
-
-			// set the currency, see the currency 
-			// reference for more info
-			currency: "MXN",
-
-			// collection of arbitrary data you may want to store 
-			// with the cart, such as customer info
-			data: {},
-
-			// set the cart langauge 
-			// (may be used for checkout)
-			language: "spanish-es",
-
-			// true if tax should be applied to shipping
-			taxShipping: false,
-
-			// event callbacks 
-			beforeAdd			: null,
-			afterAdd			: null,
-			load				: null,
-			beforeSave		: null,
-			afterSave			: null,
-			update			: null,
-			ready			: null,
-			checkoutSuccess	: null,
-			checkoutFail		: null,
-			beforeCheckout		: null,
-		    beforeRemove           : null
-		});
-	</script>
-<!-- start top_js_button -->
-<script type="text/javascript" src="js/easing.js"></script>
-<script type="text/javascript" src="js/move-top.js"></script>
-   <script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+	<!-- start top_js_button -->
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	   <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
 			});
-		});
-	</script>
-</head>
-<body>
-<!-- start header -->
-<div class="top_bg">
-<div class="wrap">
-	<div class="header">
-		<div class="logo">
-			<a href="index.html"><img src="images/logo.png" alt=""/></a>
+		</script>
+	</head>
+	<body>
+		<!-- start header -->
+		<div class="top_bg">
+		<div class="wrap">
+			<div class="header">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" alt=""/></a>
+				</div>
+				 <div class="log_reg">
+						<ul>
+							<li><a href="login.html">Login</a> </li>							   
+							<div class="clear"></div>
+						</ul>
+				</div>	
+				<div class="web_search">
+				 	<form>
+						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+						<input type="submit" value=" " />
+					</form>
+			    </div>						
+				<div class="clear"></div>
+			</div>	
 		</div>
-		 <div class="log_reg">
+		</div>
+		<!-- start header_btm -->
+		<div class="wrap">
+		<div class="header_btm">
+				<div class="menu">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="products.html">Productos</a></li>
+						<li><a href="ofertas.html">Ofertas</a></li>
+						<li><a href="about.html">Nosotros</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div id="smart_nav">
+					<a class="navicon" href="#menu-left"> </a>
+				</div>
+				<nav id="menu-left">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="products.html">Productos</a></li>
+						<li><a href="ofertas.html">Ofertas</a></li>
+						<li><a href="about.html">Nosotros</a></li>
+						<div class="clear"></div>
+					</ul>
+				</nav>
+			<div class="header_right">
 				<ul>
-					<li><a href="login.html">Login</a> </li>							   
-					<div class="clear"></div>
+					<li><a href="cart.html"><i  class="cart"></i><span class="simpleCart_quantity"></span></a></li>
 				</ul>
-		</div>	
-		<div class="web_search">
-		 	<form>
-				<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-				<input type="submit" value=" " />
-			</form>
-	    </div>						
-		<div class="clear"></div>
-	</div>	
-</div>
-</div>
-<!-- start header_btm -->
-<div class="wrap">
-<div class="header_btm">
-		<div class="menu">
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="products.html">Productos</a></li>
-				<li><a href="ofertas.html">Ofertas</a></li>
-				<li><a href="about.html">Nosotros</a></li>
-				<div class="clear"></div>
-			</ul>
+			</div>
+			<div class="clear"></div>
 		</div>
-		<div id="smart_nav">
-			<a class="navicon" href="#menu-left"> </a>
 		</div>
-		<nav id="menu-left">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="products.html">Productos</a></li>
-				<li><a href="ofertas.html">Ofertas</a></li>
-				<li><a href="about.html">Nosotros</a></li>
-				<div class="clear"></div>
-			</ul>
-		</nav>
-	<div class="header_right">
-		<ul>
-			<li><a href="cart.html"><i  class="cart"></i><span class="simpleCart_quantity"></span></a></li>
-		</ul>
-	</div>
-	<div class="clear"></div>
-</div>
-</div>
-<!-- start top_bg -->
-<div class="top_bg">
-<div class="wrap">
-<div class="main_top">
-	<h2 class="style">Carrito</h2>
-</div>
-</div>
-</div>
-<!-- start main -->
-<div class="main_bg">
-	<div class="wrap">
-		<div class="main">
-			<div class="simpleCart_items"></div>
-			<table class="table">
-			  <tr>
-			    <td style="text-align: right">Total de productos:</td>
-			    <td class="simpleCart_quantity"></td>
-			  </tr>
-			  <tr>
-			    <td style="text-align: right">Total de Compra:</td>
-			    <td class="simpleCart_total"></td>
-			  </tr>
-			</table>
-			<table class="table">
-			  <tr>
-			    <td style="text-align: center"><a href="javascript:;" class="simpleCart_empty">Borrar Carrito</a></td>
-			    <td style="text-align: center"><a href="javascript:;" class="simpleCart_checkout">Checkout</a></td>
-			  </tr>
-			</table>
+		<!-- start top_bg -->
+		<div class="top_bg">
+		<div class="wrap">
+		<div class="main_top">
+			<h2 class="style">Carrito</h2>
 		</div>
-	</div>
-</div>
-<!-- start footer -->
-<!--<div class="footer_mid">
-<div class="wrap">
-<div class="footer">
-	<div class="f_search">
-		<form>
-			<input type="text" value="" placeholder="Correo para recibir noticias" />
-			<input type="submit" value=""/>
-		</form>
-	</div>
-	<div class="soc_icons">
-			<ul>
-				<li><a class="icon1" href="#"></a></li>
-				<li><a class="icon2" href="#"></a></li>
-				<li><a class="icon3" href="#"></a></li>
-				<li><a class="icon4" href="#"></a></li>
-				<li><a class="icon5" href="#"></a></li>
-			</ul>	
-	</div>
-	<div class="clear"></div>
-</div>
-</div>
-</div> -->
-<!-- start footer -->
-<div class="footer_bg">
-<div class="wrap">
-<div class="footer">
-		<!-- scroll_top_btn -->
-	    <script type="text/javascript">
-			$(document).ready(function() {
-			
-				var defaults = {
-		  			containerID: 'toTop', // fading element id
-					containerHoverID: 'toTopHover', // fading element hover id
-					scrollSpeed: 1200,
-					easingType: 'linear' 
-		 		};
-				
-				
-				$().UItoTop({ easingType: 'easeOutQuart' });
-				
-			});
-		</script>
-		 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
-		<!--end scroll_top_btn -->
-	<div class="f_nav1">
-		<ul>
-			<li><a href="#">Home /</a></li>
-			<li><a href="about.html">Sobre Nosotros</a></li>
-		</ul>
 		</div>
-	<div class="copy">
-		<p class="link"><span>© Arboles Binarios</span></p>
-	</div>
-	<div class="clear"></div>
-</div>
-</div>
-</div>
-</body>
+		</div>
+		<!-- start main -->
+		<div class="main_bg">
+			<div class="wrap">
+				<div class="main">
+					<div class="simpleCart_items"></div>
+					<table class="table">
+					  <tr>
+					    <td style="text-align: right">Total de productos:</td>
+					    <td class="simpleCart_quantity"></td>
+					  </tr>
+					  <tr>
+					    <td style="text-align: right">Total de Compra:</td>
+					    <td class="simpleCart_total"></td>
+					  </tr>
+					</table>
+					<table class="table">
+					  <tr>
+					    <td style="text-align: center"><a href="javascript:;" class="simpleCart_empty">Borrar Carrito</a></td>
+					    <td style="text-align: center"><a href="javascript:;" class="simpleCart_checkout">Checkout</a></td>
+					  </tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- start footer -->
+		<div class="footer_bg">
+		<div class="wrap">
+		<div class="footer">
+				<!-- scroll_top_btn -->
+			    <script type="text/javascript">
+					$(document).ready(function() {
+					
+						var defaults = {
+				  			containerID: 'toTop', // fading element id
+							containerHoverID: 'toTopHover', // fading element hover id
+							scrollSpeed: 1200,
+							easingType: 'linear' 
+				 		};
+						
+						
+						$().UItoTop({ easingType: 'easeOutQuart' });
+						
+					});
+				</script>
+				 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+				<!--end scroll_top_btn -->
+			<div class="f_nav1">
+				<ul>
+					<li><a href="#">Home /</a></li>
+					<li><a href="about.html">Sobre Nosotros</a></li>
+				</ul>
+				</div>
+			<div class="copy">
+				<p class="link"><span>© Arboles Binarios</span></p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		</div>
+		</div>
+	</body>
 </html>
