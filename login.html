@@ -150,21 +150,21 @@ V: 1.3
     }
 
     function login() {
-  var x = document.getElementById("frm2");
-  Parse.User.logIn(x.elements[0].value, x.elements[1].value, {
-    success: function(user) {
-    // Do stuff after successful login.
-    alert("Bienvenido " + x.elements[0].value + "!");
-    move();
+	  var x = document.getElementById("frm2");
+	  Parse.User.logIn(x.elements[0].value, x.elements[1].value, {
+	    success: function(user) {
+	    // Do stuff after successful login.
+	    alert("Bienvenido " + x.elements[0].value + "!");
+	    move();
 
-    },
-    error: function(user, error) {
-    // The login failed. Check error to see why.
-    alert("Error: " + error.code + " " + error.message);
+	    },
+	    error: function(user, error) {
+	    // The login failed. Check error to see why.
+	    alert("Error: " + error.code + " " + error.message);
 
-    }
-  });
-}
+	    }
+	  });
+	}
 
     </script>
     <div class="login_left">
